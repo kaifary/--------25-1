@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графический дизайн | Портфолио Виктории</title>
+    <style>
+        /* Базовые стили и сброс */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Красивый фон с природой (горы и лес) */
+            background: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Основной контейнер для контента */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.93); /* Полупрозрачный белый фон для читаемости */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        /* Шапка сайта */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #2196f3; /* Синий акцент */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Аватарка голубого цвета */
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #2196f3; /* Голубой цвет */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+            border: 3px solid white;
+        }
+
+        .author-info h1 {
+            color: #1565c0; /* Темно-синий */
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Слоган */
+        .slogan {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1565c0;
+            text-align: center;
+            padding: 15px;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #2196f3;
+            margin-bottom: 30px;
+        }
+
+        /* Навигация */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1565c0;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2196f3;
+        }
+
+        /* Основной контент (сетка) */
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Статьи (виды дизайна) */
+        article {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border-left: 6px solid #2196f3;
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        article h2 {
+            color: #1565c0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        article h3 {
+            color: #1976d2;
+            margin: 15px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Стили для картинок внутри статей */
+        .article-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 10px 0 15px 0;
+            border: 2px solid #e0e0e0;
+        }
+
+        article ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        article li {
+            margin-bottom: 5px;
+        }
+
+        /* Боковая панель (ссылки) */
+        aside {
+            background: #e3f2fd; /* Светло-голубой фон */
+            padding: 25px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        aside h2 {
+            color: #1565c0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .external-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .external-links a {
+            display: block;
+            padding: 12px;
+            background: white;
+            color: #1565c0;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid #90caf9;
+        }
+
+        .external-links a:hover {
+            background: #2196f3;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Подвал */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Семантическая шапка -->
+        <header>
+            <div class="logo-area">
+                <div class="avatar" aria-label="Аватар Виктории">V</div>
+                <div class="author-info">
+                    <h1>Виктория</h1>
+                    <p>Графический дизайнер</p>
+                </div>
+            </div>
+            <!-- Семантическая навигация -->
+            <nav aria-label="Основная навигация">
+                <ul>
+                    <li><a href="#presentation">Презентации</a></li>
+                    <li><a href="#marketplace">Карточки</a></li>
+                    <li><a href="#vk-design">VK Дизайн</a></li>
+                    <li><a href="#web-design">Сайты</a></li>
+                    <li><a href="#print">Полиграфия</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Слоган -->
+        <div class="slogan">
+            Ваши мысли. Мои идеи. Наш результат.
+        </div>
+
+        <!-- Основной контент -->
+        <main>
+            <!-- Главный раздел -->
+            <section id="design-services">
+                <h2>Мои направления в графическом дизайне</h2>
+                <p>Я создаю визуальные решения, которые помогают бизнесу и личным проектам выглядеть профессионально и современно. Вот основные направления, в которых я работаю:</p>
+
+                <!-- Статья 1 -->
+                <article id="presentation">
+                    <h2>Дизайн презентации</h2>
+                    <p>Создание убедительных и визуально привлекательных презентаций для бизнеса, образования и личных целей. Превращаю сложные данные в понятные слайды.</p>
+                    <!-- Контентное изображение с alt -->
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800&auto=format&fit=crop" alt="Слайды презентации на экране ноутбука" class="article-image">
+                    
+                    <h3>Что я делаю:</h3>
+                    <ul>
+                        <li>Разработка структуры и логики повествования</li>
+                        <li>Подбор цветовой схемы и типографики</li>
+                        <li>Создание инфографики и схем</li>
+                        <li>Оформление слайдов с акцентом на ключевые сообщения</li>
+                    </ul>
+                </article>
+
+                <!-- Статья 2 -->
+                <article id="marketplace">
+                    <h2>Дизайн карточки товара для маркетплейсов</h2>
+                    <p>Разработка продающих карточек для Ozon, Wildberries и Яндекс.Маркета. Мои дизайны помогают выделить товар среди конкурентов и повысить конверсию.</p>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Аналитика и графики на экране" class="article-image">
+                    
+                    <h3>Ключевые элементы:</h3>
+                    <ul>
+                        <li>Качественная визуализация товара (инфографика)</li>
+                        <li>Четкая иерархия текста и выгодных предложений</li>
+                        <li>Соответствие требованиям площадок</li>
+                        <li>Адаптация под мобильные устройства</li>
+                    </ul>
+                </article>
+
+                <!-- Статья 3 -->
+                <article id="vk-design">
+                    <h2>Дизайн сообщества в ВК видео</h2>
+                    <p>Оформление сообществ и каналов: обложки, аватарки, посты, сторис и видео-превью. Создаю единый визуальный стиль, который работает на узнаваемость бренда.</p>
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" alt="Интерфейс социальной сети на смартфоне" class="article-image">
+                    
+                    <h3>Мои задачи:</h3>
+                    <ul>
+                        <li>Разработка фирменного стиля сообщества</li>
+                        <li>Создание шаблонов для постов</li>
+                        <li>Дизайн обложек для видео и прямых эфиров</li>
+                        <li>Оформление виджетов и меню</li>
+                    </ul>
+                </article>
+
+                <!-- Статья 4 (Добавлено по заданию) -->
+                <article id="web-design">
+                    <h2>Дизайн вашего сайта</h2>
+                    <p>Создание современных, адаптивных и удобных веб-сайтов. Я разрабатываю не только красивый внешний вид, но и продумываю пользовательский опыт (UX), чтобы сайт приносил результат.</p>
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop" alt="Рабочий стол веб-дизайнера с макетом сайта" class="article-image">
+                    
+                    <h3>Этапы работы:</h3>
+                    <ul>
+                        <li>Анализ целевой аудитории и конкурентов</li>
+                        <li>Создание прототипа и структуры</li>
+                        <li>Разработка визуального дизайна (UI)</li>
+                        <li>Адаптивная верстка для всех устройств</li>
+                    </ul>
+                </article>
+
+                <!-- Статья 5 -->
+                <article id="print">
+                    <h2>Дизайн грамот и афиш</h2>
+                    <p>Создание полиграфической продукции для мероприятий, конкурсов и награждений. Учитываю все требования к печати, чтобы результат радовал вживую.</p>
+                    <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=800&auto=format&fit=crop" alt="Печатная продукция: буклеты и плакаты" class="article-image">
+                    
+                    <h3>Включает в себя:</h3>
+                    <ul>
+                        <li>Дизайн дипломов, грамот и благодарственных писем</li>
+                        <li>Разработка афиш для концертов, выставок и спектаклей</li>
+                        <li>Подготовка макетов к печати (CMYK, вылеты)</li>
+                        <li>Подбор шрифтов и декоративных элементов</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Боковая панель со ссылками -->
+            <aside>
+                <h2>Полезные ссылки</h2>
+                <div class="external-links">
+                    <!-- Только те ссылки, которые указаны в задании -->
+                    <a href="https://vk.ru/studgorodok_irnitu" target="_blank" rel="noopener noreferrer">Студгородок ИРНИТУ (VK)</a>
+                    <a href="https://www.behance.net/Viktooriia" target="_blank" rel="noopener noreferrer">Портфолио на Behance</a>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Семантический подвал -->
+        <footer>
+            <p>&copy; 2026 Виктория. Сайт создан в учебных целях. | <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Проверить валидность</a></p>
+        </footer>
+    </div>
+</body>
+</html>
